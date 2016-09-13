@@ -11,7 +11,7 @@ class ntp_wrapper {
     mode    => '0644',
     owner   => 'root',
     #source => 'puppet:///modules/ntp_wrapper/ntp.conf',
-    contect => template('ntp_wrapper/ntp.conf.epp'),
+    content => epp('ntp_wrapper/ntp.conf.epp'),
     require => Package['ntp'],
     notify  => Service['ntpd'],
   }
